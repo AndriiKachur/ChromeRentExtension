@@ -1,0 +1,29 @@
+body {
+    width: 450px;
+    min-height: 200px;
+    overflow-x: hidden;
+    line-height: 12px;
+    font-size: 12px;
+    font-family: cursive;
+}
+
+button {
+    font-size: 11px;
+}
+
+.topic {
+    border: 1px solid darkgray;
+    padding: 2px 2px 2px 5px;
+}
+
+.table {
+    width: 100%;
+}
+
+.new {
+    background-color: RGB(250, 250, 180);
+}
+
+.newest {
+    background-color: RGB(230, 240, 230);
+}

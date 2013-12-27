@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+
+    "name": "Rent extension",
+    "description": "Kharkov forum rent extension",
+    "version": "0.1",
+
+    "author": "Andrey",
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+    "permissions": [ "tabs", "http://www.kharkovforum.com/" ],
+
+    "background": {
+        "scripts": ["js/jquery-2.0.3.js", "js/background.js"]
+    },
+
+    "icons": {
+        "52": "images/icon.jpg"
+    },
+
+    "browser_action": {
+        "default_title": "Rent extension",
+        "default_icon": "images/icon.png",
+        "default_popup": "html/popup.html"
+    }
+}

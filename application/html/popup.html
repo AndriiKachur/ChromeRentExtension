@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Kharkovforum Rent Topics</title>
+
+    <link rel="stylesheet" href="popup.css"/>
+
+    <script language="JavaScript" src="/js/angular.js"></script>
+    <script language="JavaScript" src="/js/popup.js"></script>
+</head>
+<body ng-app="app" ng-controller="MainCtrl">
+
+<div ng-if="!elems.length">
+    Loading...
+</div>
+
+<div ng-show="elems.length">
+    Filter: <input type="text" ng-model="filterText"/>
+</div>
+<div class="topic" ng-repeat="e in elems | filter:filterText"
+        ng-class="{new: !e.lastOpened && e.lastLoaded,
+                   newest: !e.lastOpened  && !e.lastLoaded }">
+    <div>
+        <table>
+            <tr>
+                <td style="width: 33%">Received</td>
+                <td style="width: 33%">Updated</td>
+                <td style="width: 33%">Last opened</td>
+            </tr>
+            <tr>
+                <td>{{date(e.dateRegistered)}}</td>
+                <td>{{date(e.lastLoaded)}}</td>
+                <td>{{date(e.lastOpened)}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <button ng-click="goTo(e)">{{e.text}}</button>
+    <div>{{e.title}}</div>
+</div>
+
+
+</body>
+</html>
