@@ -17,7 +17,7 @@
 <div ng-show="elems.length">
     Filter: <input type="text" ng-model="filterText"/>
 </div>
-<div class="topic" ng-repeat="e in elems | filter:filterText"
+<div class="topic" ng-repeat="e in elems track by $index | filter:filterText"
         ng-class="{new: !e.lastOpened && e.lastLoaded,
                    newest: !e.lastOpened  && !e.lastLoaded }">
     <div>
