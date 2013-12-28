@@ -24,7 +24,7 @@ function Server() {
         var xhr = new XMLHttpRequest(),
             self = this,
             callback = function () {
-                if (xhr.readyState == 4) {
+                if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log('Rent topics received. ' + new Date());
                     var body = self.util.stripDom(xhr.responseText);
 
