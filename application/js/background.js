@@ -1,8 +1,10 @@
+'use strict';
+
 var server = new Server();
 server.init();
 
 function Server() {
-    this.refreshInterval = null,
+    this.refreshInterval = null;
 
     this.state = {
         elems: null,
@@ -42,14 +44,14 @@ function Server() {
         xhr.open("GET", "http://www.kharkovforum.com/forumdisplay.php?f=112", true);
         xhr.onreadystatechange = callback;
         xhr.send();
-    },
+    };
 
     this.util = {
         stripDom: function (text) {
             text = text.substring(text.indexOf('<body>'), text.indexOf('</body>') + 7);
             return text;
         }
-    },
+    };
 
     this.init = function () {
         this.state.elems = {}; //TODO: localStorage
@@ -58,5 +60,6 @@ function Server() {
         this.refreshInterval = setInterval(function () {
             self.request();
         }, 300000); //5 min
-    }
-};
+    };
+
+}
