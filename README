@@ -1,1 +1,5 @@
 Chrome extension that shows new flat rent topics from http://kharkovforum.com 
+
+Scans each 5 minutes Kharkovforum for flats available for rent.
+
+Shows green extension badge if there is no new topics while red label means extension requires your attention.
