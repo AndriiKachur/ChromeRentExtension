@@ -4,8 +4,7 @@
 
     var background = chrome.extension.getBackgroundPage(),
         ngApp = angular.module('app', []);
-    chrome.browserAction.setBadgeBackgroundColor({color: [200, 100, 100, 200]});
-
+    
     ngApp.controller('MainCtrl', function ($scope, $timeout, $filter, $log) {
 
         $scope.isNew = function(e) {
@@ -21,7 +20,7 @@
 
         $scope.goTo = function (elem) {
             var props = {
-                    url: 'http://www.kharkovforum.com/' + elem.link,
+                    url: 'https://www.kharkovforum.com/' + elem.link,
                     active: true
                 },
                 callback = function (tab) {
@@ -38,11 +37,7 @@
             $scope.elems = [];
             for (var i in elems) {
                 $scope.elems.push(elems[i]);
-            }
-
-            chrome.browserAction.setBadgeText({
-                text: '' + Object.values(elems).filter($scope.isNewest).length
-            });
+            }            
         };
         fillElems();
         $timeout(fillElems, 5000);
